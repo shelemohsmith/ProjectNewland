@@ -5,69 +5,185 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Project Newland</title>
   <style>
+    :root {
+      color-scheme: dark;
+      background: #0b1120;
+      color: #e2e8f0;
+    }
+    * {
+      box-sizing: border-box;
+    }
     body {
       margin: 0;
       font-family: Inter, Arial, sans-serif;
-      background: #0f172a;
+      background: radial-gradient(circle at top, rgba(56, 189, 248, 0.12), transparent 28%),
+        linear-gradient(180deg, #020617 0%, #0b1120 100%);
       color: #e2e8f0;
-      display: flex;
-      align-items: center;
-      justify-content: center;
       min-height: 100vh;
-      padding: 24px;
+      padding: 0;
     }
-    .card {
-      max-width: 760px;
-      width: 100%;
-      background: rgba(15, 23, 42, 0.95);
-      border: 1px solid rgba(148, 163, 184, 0.18);
-      border-radius: 24px;
-      box-shadow: 0 24px 80px rgba(15, 23, 42, 0.35);
+    .page {
+      width: min(1120px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 40px 0 80px;
+    }
+    header {
+      display: grid;
+      gap: 24px;
+      padding: 24px 0 36px;
+    }
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #38bdf8;
+      font-size: 0.9rem;
+    }
+    .hero {
+      background: rgba(15, 23, 42, 0.82);
+      border: 1px solid rgba(148, 163, 184, 0.14);
+      border-radius: 28px;
       padding: 40px;
+      box-shadow: 0 40px 120px rgba(15, 23, 42, 0.45);
     }
-    h1 {
-      margin: 0 0 16px;
-      font-size: clamp(2.5rem, 5vw, 3.5rem);
-      letter-spacing: -0.04em;
+    .hero h1 {
+      margin: 0 0 20px;
+      font-size: clamp(3rem, 6vw, 4.5rem);
+      line-height: 1.02;
+      letter-spacing: -0.05em;
       color: #f8fafc;
     }
-    p {
-      line-height: 1.8;
+    .hero p {
+      margin: 0;
+      max-width: 760px;
+      font-size: 1.1rem;
       color: #cbd5e1;
-      margin: 0 0 24px;
-      font-size: 1.05rem;
+      line-height: 1.8;
     }
-    .label {
-      display: inline-block;
-      margin-bottom: 24px;
-      color: #7dd3fc;
-      font-weight: 600;
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.83rem;
-    }
-    a {
-      color: #38bdf8;
+    .hero .cta {
+      display: inline-flex;
+      margin-top: 28px;
+      background: #38bdf8;
+      color: #0f172a;
+      border: none;
+      padding: 14px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      cursor: pointer;
       text-decoration: none;
     }
-    a:hover {
-      text-decoration: underline;
+    .content {
+      display: grid;
+      gap: 24px;
+      margin-top: 36px;
+    }
+    .panel {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.12);
+      border-radius: 24px;
+      padding: 32px;
+    }
+    .panel h2 {
+      margin-top: 0;
+      font-size: 1.5rem;
+      color: #ffffff;
+    }
+    .panel p,
+    .panel li {
+      color: #cbd5e1;
+      line-height: 1.8;
+      font-size: 1rem;
+    }
+    .panel ul {
+      padding-left: 20px;
+      margin: 16px 0 0;
+    }
+    .panel li {
+      margin-bottom: 12px;
+    }
+    .feature-grid {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    }
+    .feature-card {
+      background: rgba(30, 41, 59, 0.9);
+      border: 1px solid rgba(56, 189, 248, 0.12);
+      border-radius: 20px;
+      padding: 24px;
+    }
+    .feature-card h3 {
+      margin: 0 0 12px;
+      font-size: 1.15rem;
+      color: #f8fafc;
+    }
+    .feature-card p {
+      margin: 0;
+      color: #cbd5e1;
+    }
+    footer {
+      margin-top: 42px;
+      text-align: center;
+      color: #94a3b8;
+      font-size: 0.95rem;
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="label">Project Newland</div>
-    <h1>Welcome to Project Newland</h1>
-    <p>
-      Project Newland is live and running. This homepage is the published site for the repository.
-    </p>
-    <p>
-      The page is now serving the final site content, not setup instructions.
-    </p>
-    <p>
-      If you want, I can also add a logo, sections, or your custom project details next.
-    </p>
-  </main>
+  <div class="page">
+    <header>
+      <div class="brand">PROJECT NEWLAND</div>
+      <section class="hero">
+        <h1>Project Newland is live.</h1>
+        <p>
+          This page is the official public site for Project Newland. It is now published, hosted on GitHub Pages, and ready for visitors.
+        </p>
+        <a class="cta" href="#details">Explore the project</a>
+      </section>
+    </header>
+
+    <div class="content">
+      <section class="panel" id="details">
+        <h2>What Project Newland is</h2>
+        <p>
+          Project Newland is a simple, polished site designed to introduce your project and share the most important information quickly. This page was built from the repository root and published through GitHub Pages.
+        </p>
+      </section>
+
+      <section class="panel">
+        <h2>Key highlights</h2>
+        <div class="feature-grid">
+          <div class="feature-card">
+            <h3>Live on GitHub</h3>
+            <p>Deployed from the repo’s main branch and served at the GitHub Pages URL.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Custom project branding</h3>
+            <p>The page now reflects your project name, Project Newland, with a dark modern visual style.</p>
+          </div>
+          <div class="feature-card">
+            <h3>Ready for content</h3>
+            <p>You can replace this copy with your own description, features, screenshots, or links.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel">
+        <h2>Next content to add</h2>
+        <ul>
+          <li>Project goals and mission statement</li>
+          <li>Features, updates, or screenshots</li>
+          <li>Contact information or join links</li>
+        </ul>
+      </section>
+    </div>
+
+    <footer>
+      Project Newland • Published at shelemohsmith.github.io/ProjectNewland/
+    </footer>
+  </div>
 </body>
 </html>
